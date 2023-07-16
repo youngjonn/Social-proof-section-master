@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+
+    /* ### Neutral */
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body {
+    width: 100;
+    min-height: 100vh;
+    background-image: url(images/bg-pattern-top-desktop.svg),
+        url(images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom right;
+    font-size: 15px;
+    font-family: "League Spartan";
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 100vh;
+    padding-inline: 10.9em;
+    padding-top: 7.8em;
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.product {
+    width: 60%;
+}
+
+.product h1 {
+    font-size: 3.5rem;
+    letter-spacing: -2px;
+    line-height: .85em;
+    color: var(--Very-Dark-Magenta);
+    font-weight: 700;
+}
+
+.product p {
+    margin-top: 1.4em;
+    color: var(--Dark-Grayish-Magenta);
+    line-height: 1.45;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    position: relative;
+    margin-top: .35em;
+    
+}
+
+.rate {
+    background-color: var(--Light-Grayish-Magenta);
+    border-radius: 0.3rem;
+    padding: 1.25em 2em;
+    display: flex;
+    align-items: center;
+    gap: 2.2em;
+    width: 30em;
+    /* width: fit-content; */
+    white-space: nowrap;
+    position: relative;
+}
+
+.rate-1 {
+    right: 6.5em;
+}
+
+.rate-2 {
+    right: 3em;
+}
+
+.rate-3 {
+    right: 0;
+}
+
+.stars img:not(:last-child) {
+    margin-left: 0.35em;
+}
+
+.stars {
+    white-space: nowrap;
+}
+
+.rate span {
+    color: var(--Very-Dark-Magenta);
+    font-size: 1.1rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    margin-top: 4.8em;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--Very-Dark-Magenta);
+    border-radius: 0.5em;
+    padding: 2.2em;
+    padding-top: 2.8em;
+}
+
+.card .profile {
+    display: flex;
+    align-items: center;
+    gap: 0em;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 1.7em;
+}
+
+.profile img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.profile div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .4em;
+}
+
+.profile div h3 {
+    color: var(--White);
+    font-weight: 500;
+}
+
+.profile div span {
+    color: var(--Soft-Pink);
+    font-weight: 500;
+}
+
+.card p {
+    color: var(--White);
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.card-1 {
+    margin-bottom: 6.0em;
+    align-self: flex-start;
+}
+.card-2 {
+    margin-bottom: 4em;
+    align-self: center;
+}
+
+.card-3 {
+    margin-bottom: 1.8em;
+}
+
+@media screen and (max-width:1250px) {
+    .container {
+        padding-inline: 8em;
+    }
+    .rate {
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        padding-inline: 6em;
+    }
+    .rate {
+        flex-wrap: wrap;
+        white-space: initial;
+        flex-direction: column;
+        width: fit-content;
+        gap: .6em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+    }
+    .container {
+        padding-inline: 4em;
+    }
+    .top {
+        flex-direction: column;
+        text-align: center;
+    }   
+    .product {
+        width: 100%;
+    } 
+    .product h1 {
+        font-size: 2.5rem;
+    }
+    .rating {
+        width: 100%;
+        align-items: center;
+        margin-top: 2em;
+        margin-bottom: 0;
+    }
+    .rate {
+        width: 100%;
+        left: 0;
+        max-width: 100%;
+    }
+    .rate span {
+        white-space: pre-wrap;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 1em;
+        margin-top: 3em;
+    }
+    .card, .card-1 {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding-inline: 2em;
+    }
+}
